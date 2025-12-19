@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 export default function PublicationSection() {
     return (
-        <section className="bg-white py-16">
+        <section className="py-16 bg-gray-100">
             <div className="text-center mb-14">
                 <h4 className="text-blue-600 font-semibold tracking-wide uppercase">
                     Publications
@@ -41,7 +41,7 @@ export default function PublicationSection() {
                             </CardHeader>
 
                             <CardDescription className="p-4">
-                                <p className="text-sm text-gray-500 mb-2">Publié</p>
+                                <p className="text-sm text-gray-500 mb-2">Publié le <span className="text-sky">25 Nov 2025</span></p>
 
                                 <CardTitle className="text-lg font-semibold text-gray-900">
                                     Titre de la publication 1
