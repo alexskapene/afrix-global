@@ -43,6 +43,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@layer base{
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -76,6 +78,11 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --afrix-red: #ea4335;
+  --afrix-blue: #4285f4;
+  --afrix-green: #30b43f;
+  --afrix-yellow: #fbbc05;
+  --afrix-dark: #0a0a0a;
 }
 
 .dark {
@@ -111,19 +118,38 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
-
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply bg-black/30 backdrop-blur-md border border-white/20;
+  }
+  .glass-light {
+    @apply bg-white/5 backdrop-blur-md;
+  }
+}
 @keyframes gradient-xy {
-  0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
+
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
 }
 
 .animate-gradient-xy {
@@ -133,9 +159,17 @@
 
 /* Dégradé animé gris/blanc */
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animate-bg-gradient {
@@ -146,9 +180,17 @@
 
 /* Animation triangle flottant */
 @keyframes floatTriangle {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Apparition au scroll */
@@ -162,6 +204,3 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-
-

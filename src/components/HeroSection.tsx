@@ -1,125 +1,56 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { useEffect, useRef } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
+import Image from "next/image"
 
 export default function HeroSection() {
-  const carouselRef = useRef<any>(null);
-
-  // Auto-slide every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (carouselRef.current) {
-        const nextBtn = carouselRef.current.querySelector("[data-carousel-next]");
-        nextBtn?.click();
-      }
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <Carousel ref={carouselRef} className="relative w-full h-[90vh]">
-      <CarouselContent>
-        <CarouselItem className="relative w-full h-[90vh]">
-          <img
-            src="./../images/hero1.jpg"
-            alt="Hero Image 1"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h1 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-                  Bienvenue chez Afrix-Global
-                </h1>
-                <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
-                  Rejoignez nos programmes et démarrez votre parcours vers un futur
-                  professionnel numérique réussi.
-                </p>
-                <div className="pt-2">
-                  <Button size="lg" className="text-lg px-8 py-6 bg-blue-500">
-                    DECOUVRIR
-                  </Button>
-                </div>
-              </div>
+    <section className="relative flex flex-col items-center gap-8 lg:gap-[5vw] w-full min-h-screen pt-8 bg-[#0a0a0a]">
+
+      <div className="w-[80%] flex flex-col lg:flex-row items-center">
+        {/* Left side */}
+        <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5vw] font-bold italic leading-tight text-white">
+            We Train. <br />
+            We Create. <br />
+            We Connect.
+          </h1>
+        </div>
+
+        {/* Right side */}
+        <div className="w-full lg:w-1/2 relative flex items-end justify-center min-h-[300px] sm:min-h-[400px] lg:min-h-[35vw]">
+          {/* Main circle with image */}
+          <div className="relative h-[280px] w-[280px] sm:h-[320px] sm:w-[320px] lg:h-[35vw] lg:w-[35vw] border-2 border-[#4285f4] rounded-full flex items-center justify-center overflow-hidden">
+            <div className="relative h-[220px] w-[220px] sm:h-[260px] sm:w-[260px] lg:h-[25vw] lg:w-[25vw] border-2 border-[#30b43f] rounded-full z-10">
+              <Image
+                src="/images/hero-person.png"
+                alt="Afrix Global - formation"
+                fill
+                className="object-cover rounded-full"
+                priority
+              />
             </div>
           </div>
-        </CarouselItem>
 
-        <CarouselItem className="relative w-full h-[90vh]">
-          <img
-            src="./../images/hero2.jpg"
-            alt="Hero Image 2"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h1 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-                  Formez-vous aux métiers du numérique
-                </h1>
-                <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
-                  Acquérez des compétences recherchées et donnez vie à votre avenir digital.
-                </p>
-                <div className="pt-2">
-                  <Button size="lg" className="text-lg px-8 py-6 bg-blue-500">
-                    NOS FORMATIONS
-                  </Button>
-                </div>
-              </div>
-            </div>
+          {/* Top circle - We Train (red) */}
+          <div className="absolute right-[5%] lg:right-[10%] top-[-5%] lg:top-[-10%] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[10vw] lg:h-[10vw] bg-[#ea4335] rounded-full flex items-center justify-center z-20">
+            <h3 className="text-white text-center text-xs sm:text-sm lg:text-base font-bold leading-tight">
+              We <br />Train
+            </h3>
           </div>
-        </CarouselItem>
 
-        <CarouselItem className="relative w-full h-[90vh]">
-          <img
-            src="./../images/hero3.jpg"
-            alt="Hero Image 3"
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          />
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="container mx-auto px-4">
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h1 className="text-white text-3xl md:text-5xl font-bold leading-tight">
-                  Excellence pédagogique & accompagnement personnalisé
-                </h1>
-                <p className="text-white text-lg md:text-xl max-w-2xl mx-auto">
-                  Bénéficiez d'un suivi individualisé, de projets concrets et d'un réseau
-                  professionnel pour maximiser vos chances de réussite.
-                </p>
-                <div className="pt-2">
-                  <Button size="lg" className="text-lg px-8 py-6 bg-blue-500">
-                    EN SAVOIR PLUS
-                  </Button>
-                </div>
-              </div>
-            </div>
+          {/* Bottom circle - We Create (yellow) */}
+          <div className="absolute left-[10%] lg:left-[15%] bottom-[5%] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[10vw] lg:h-[10vw] bg-[#fbbc05] rounded-full flex items-center justify-center z-20">
+            <h3 className="text-white text-center text-xs sm:text-sm lg:text-base font-bold leading-tight">
+              We <br />create
+            </h3>
           </div>
-        </CarouselItem>
-      </CarouselContent>
 
-      <CarouselPrevious
-        data-carousel-prev
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 
-        bg-white/75 rounded-full p-2 hover:bg-white z-10 w-12 h-12"
-      />
-      <CarouselNext
-        data-carousel-next
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 
-        bg-white/75 rounded-full p-2 hover:bg-white z-10 w-12 h-12"
-      />
-    </Carousel>
-  );
+          {/* Right circle - We Connect (green) */}
+          <div className="absolute bottom-[15%] right-[-5%] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[10vw] lg:h-[10vw] bg-[#30b43f] rounded-full flex items-center justify-center z-20">
+            <h3 className="text-white text-center text-xs sm:text-sm lg:text-base font-bold leading-tight">
+              We <br />Connect
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

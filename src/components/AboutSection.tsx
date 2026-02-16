@@ -167,7 +167,7 @@ export default function AboutSection() {
               >
                 <Image
                   src="/logo.png"
-                  alt="Logo"
+                  alt="Logo" 
                   fill
                   className="object-cover"
                 />
