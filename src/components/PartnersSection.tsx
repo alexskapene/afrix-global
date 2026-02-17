@@ -1,62 +1,79 @@
 "use client";
 
-import Link from "next/link";
-
-export default function PartnersSection() {
+import { useRef } from "react"
+import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
   const partners = [
-    {
-      name: "OPTICOM",
-      logo: "/images/OPTICOM.jpg",
-      url: "https://opticom.cd" // Remplace par le vrai URL
-    },
-    {
-      name: "ACA-RDC",
-      logo: "/images/aca-rdc.jpg",
-      url: "https://aca-rdc.cd"
-    },
-    {
-      name: "ISIG-GOMA",
-      logo: "/images/isig_goma_logo.jpg",
-      url: "https://isig.ac.cd"
-    },
-    {
-      name: "Un Jour Nouveau",
-      logo: "/images/hub_Un_Jour_Nouveau_Goma.webp",
-      url: "https://unjournouveau.cd"
-    }
+  "/images/partner-1.webp",
+  "/images/partner-2.jpg",
+  "/images/partner-3.jpg",
+  "/images/partner-4.jpg",
   ];
+export default function PartnersSection() {
 
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  const scroll = (direction: "left" | "right") => {
+    if (carouselRef.current) {
+      const scrollAmount = 200
+      carouselRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      })
+    }
+  }
   return (
-    <section className="py-12 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold mb-8 text-center">
-          Ils expriment leurs satisfactions
-        </h2>
+    <section
+      className="w-full min-h-[50vh] py-16 bg-[#0a0a0a] flex flex-col items-center gap-10"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 100% 0%, rgba(15, 157, 88, 0.3), transparent 35%), radial-gradient(circle at 0% 0%, rgba(245, 180, 0, 0.302), transparent 35%)",
+      }}
+    >
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
+        NOS <span className="text-[#4285f4]">PARTENAIRES</span>
+      </h2>
 
-        <div className="text-center mb-8">
-          <h3 className="text-lg font-semibold mb-6">TÉMOIGNAGES</h3>
+      <div className="relative w-[90%] max-w-[1200px] flex items-center justify-center">
+        {/* Left arrow */}
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-all"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft size={24} />
+        </button>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {partners.map((partner, index) => (
-              <Link
-                key={index}
-                href={partner.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center hover:scale-105 transition-transform"
-              >
-                <div className="w-32 h-32 rounded-lg flex items-center justify-center mb-2 overflow-hidden bg-white border">
-                  <img
-                    src={partner.logo}
-                    alt={`Logo ${partner.name}`}
-                    className="w-full h-full object-contain p-3"
-                  />
-                </div>
-                <p className="text-lg font-medium">{partner.name}</p>
-              </Link>
-            ))}
-          </div>
+        {/* Carousel */}
+        <div
+          ref={carouselRef}
+          className="flex gap-8 lg:gap-[5vw] overflow-x-auto scroll-smooth py-4 px-16 scrollbar-hide"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {partners.map((src, i) => (
+            <div
+              key={i}
+              className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] lg:w-[10vw] lg:h-[10vw] flex-shrink-0 rounded-2xl bg-white/5 backdrop-blur-md overflow-hidden flex items-center justify-center hover:scale-105 transition-transform"
+            >
+              <Image
+                src={src || "/placeholder.svg"}
+                alt={`Partenaire ${i + 1}`}
+                width={150}
+                height={150}
+                className="object-contain w-full h-full p-2"
+              />
+            </div>
+          ))}
         </div>
+
+        {/* Right arrow */}
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-all"
+          aria-label="Scroll right"
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
     </section>
   );
