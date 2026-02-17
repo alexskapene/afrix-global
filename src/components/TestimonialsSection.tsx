@@ -65,10 +65,31 @@ export default function TestimonialsSection() {
         TESTIMONIALES
       </h2>
 
-      <div className="flex items-center gap-16 max-w-6xl w-full px-6">
+      <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 max-w-6xl w-full px-6">
+
+        {/* MOBILE AVATARS */}
+        <div className="flex lg:hidden gap-3 overflow-x-auto pb-4 w-full justify-center">
+          {testimonials.map((t, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`relative w-14 h-14 shrink-0 rounded-full overflow-hidden border-2 transition
+        ${i === active ? "border-[#fbbc05] scale-110" : "border-white/20 opacity-70"}`}
+            >
+              <Image
+                src={t.photo}
+                alt={t.name}
+                fill
+                sizes="56px"
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
 
         {/* AVATARS COLUMN */}
-        <div className="relative h-[420px] w-[220px] flex items-center justify-center">
+        <div className="relative h-[420px] w-[220px] items-center justify-center hidden lg:flex">
+
 
           {testimonials.map((t, i) => {
             let offset = i - active
@@ -116,7 +137,8 @@ export default function TestimonialsSection() {
 
 
         {/* BIG IMAGE */}
-        <div className="relative w-64 h-64 shrink-0">
+        <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 shrink-0">
+
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ea4335] via-[#4285f4] to-[#30b43f] blur-2xl opacity-40"></div>
 
           <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/20">
@@ -132,7 +154,8 @@ export default function TestimonialsSection() {
         </div>
 
         {/* TEXT */}
-        <div className="max-w-xl space-y-6">
+        <div className="max-w-xl space-y-6 text-center lg:text-left">
+
           <Quote className="text-[#ea4335] w-10 h-10" />
 
           <p className="text-white/80 leading-relaxed text-lg transition-all duration-500">
@@ -149,7 +172,8 @@ export default function TestimonialsSection() {
           </div>
 
           {/* BUTTONS */}
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-4 justify-center lg:justify-start">
+
             <button
               onClick={prev}
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
