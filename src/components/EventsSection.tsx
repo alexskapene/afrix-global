@@ -1,37 +1,72 @@
-import { Button } from "@/components/ui/button";
+"use client"
+import { useState } from "react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+
+const events = [
+    { image: "/images/event1.jpg", title: "Tech Summit 2026" },
+    { image: "/images/event2.jpg", title: "Workshop Digital" },
+    { image: "/images/event3.jpg", title: "Hackathon Afrix" },
+]
 
 export default function EventsSection() {
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    const prev = () => setCurrentIndex((i) => (i === 0 ? events.length - 1 : i - 1))
+    const next = () => setCurrentIndex((i) => (i === events.length - 1 ? 0 : i + 1))
     return (
-        <section className="py-16 bg-white ">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-10">
-                    <h4 className="text-blue-500">NOS EVENEMENTS</h4>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Nos récentes évenements</h2>
+        <section
+            id="events"
+            className="w-full min-h-[80vh] py-16 bg-[#0a0a0a] flex flex-col items-center gap-8"
+            style={{ backgroundImage: "radial-gradient(circle at 0% 100%, rgba(66, 133, 244, 0.3), transparent 25%), radial-gradient(circle at 100% 0%, rgba(15, 157, 88, 0.3), transparent 35%)",
+            }}
+        >
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
+                NOS <span className="text-[#fbbc05]">EVENEMENTS</span>
+            </h2>
+
+            <div className="relative w-[90%] max-w-[1000px] flex items-center justify-center">
+                {/* Left arrow */}
+                <button
+                    onClick={prev}
+                    className="absolute left-2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-all"
+                    aria-label="Previous event"
+                >
+                    <ChevronLeft size={24} />
+                </button>
+
+                {/* Event card */}
+                <div className="w-full overflow-hidden rounded-2xl">
+                    <div
+                        className="relative w-full h-[250px] sm:h-[300px] lg:h-[400px] group overflow-hidden rounded-2xl"
+                    >
+                        <Image
+                            src={events[currentIndex].image || "/placeholder.svg"}
+                            alt={events[currentIndex].title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 flex items-end justify-center pb-8">
+                            <Button
+                                variant="outline"
+                                className="rounded-full border-white/40 bg-white/20 text-white backdrop-blur-md hover:bg-white/35 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400 font-semibold px-7 py-3"
+                            >
+                                Voir plus
+                            </Button>
+                        </div>
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
-                    <div className="h-100 rounded-xl py-5 radius-10 bg-cover bg-center flex justify-center items-end"
-                    style={{ backgroundImage: "url('./../images/event1.jpg')" }}
-                    >
-                    <Button size="lg" className="text-lg px-8 py-6 bg-blue-500">
-                    Savoir plus
-                    </Button>
-                    </div>
-                    <div className="h-100 rounded-xl py-5 radius-10 bg-cover bg-center flex justify-center items-end"
-                    style={{ backgroundImage: "url('./../images/event2.jpg')" }}
-                    >
-                    <Button size="lg" className="text-lg px-8 py-6 bg-blue-500">
-                    Savoir plus
-                    </Button>
-                    </div>
-                    <div className="h-100 rounded-xl py-5 radius-10 bg-cover bg-center flex justify-center items-end"
-                    style={{ backgroundImage: "url('./../images/event3.jpg')" }}
-                    >
-                    <Button size="lg" className="text-lg px-8 py-6 bg-blue-500">
-                    Savoir plus
-                    </Button>
-                    </div>
-                </div>
-            </div>    
+
+                {/* Right arrow */}
+                <button
+                    onClick={next}
+                    className="absolute right-2 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-all"
+                    aria-label="Next event"
+                >
+                    <ChevronRight size={24} />
+                </button>
+            </div>
         </section>
     );
 }

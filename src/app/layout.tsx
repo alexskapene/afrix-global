@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Afrix Global",
   description:
     "Afrix Global est une entreprise EdTech innovante qui révolutionne l’éducation en Afrique grâce à la technologie et au numérique. Nous avons pour mission de rendre l’apprentissage accessible à tous, en proposant des solutions éducatives adaptées aux besoins des jeunes, des professionnels et des entrepreneurs.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

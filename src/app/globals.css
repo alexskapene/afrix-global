@@ -43,6 +43,8 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@layer base{
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -76,6 +78,11 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --afrix-red: oklch(#ea4335);
+  --afrix-blue: oklch(#4285f4) ;
+  --afrix-green: oklch(#30b43f) ;
+  --afrix-yellow: oklch(#fbbc05) ;
+  --afrix-dark: oklch(#0a0a0a) ;
 }
 
 .dark {
@@ -111,12 +118,25 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
-
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass {
+    @apply bg-black/30 backdrop-blur-md border border-white/20;
+  }
+  .glass-light {
+    @apply bg-white/5 backdrop-blur-md;
   }
 }
