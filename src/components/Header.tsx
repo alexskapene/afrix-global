@@ -7,12 +7,12 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "Accueil", href: "#" },
-  { label: "Equipe", href: "#" },
-  { label: "Services", href: "#services" },
-  { label: "Formations", href: "#" },
-  { label: "Blog", href: "#publications" },
-  { label: "Contact", href: "#" },
+  { label: "Accueil", href: "/" },
+  { label: "Equipe", href: "/equipe" },
+  { label: "Services", href: "/services" },
+  { label: "Formations", href: "/formations" },
+  { label: "Blog", href: "/blogs" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export default function Header() {
@@ -24,10 +24,10 @@ export default function Header() {
         {/* Logo */}
         <div className="flex-shrink-0">
           <Image
-            src="/logo.png"
+            src="/afrix.png"
             alt="Afrix Global Logo"
             width={150}
-            height={40}
+            height={20}
             className="object-contain"
           />
         </div>
