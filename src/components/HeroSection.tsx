@@ -1,6 +1,6 @@
 "use client";
 
-import image from "@/public/images/herosection.png";
+import image from "@/public/images/herosection@0.5x.png";
 import Image from "next/image";
 import LogoAfrix from "@/public/images/logo-afrix3.png";
 import { useEffect, useState } from "react";
@@ -88,7 +88,7 @@ export default function HeroSection() {
             </Link>
 
             <Link href="/contact">
-              <Button className="w-45 p-6 bg-transparent border-2 border-afrix-blue hover:bg-afrix-blue cursor-pointer">
+              <Button className="w-45 p-6 bg-transparent border border-afrix-blue hover:bg-afrix-blue cursor-pointer">
                 Nous contacter
               </Button>
             </Link>
