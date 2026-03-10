@@ -4,19 +4,22 @@ import Image from "next/image";
 import { Rocket, Globe } from "lucide-react";
 
 export default function AboutSection() {
-  return(
+  return (
     <section
-      id="about" className="w-full min-h-screen flex flex-col justify-center gap-8 lg:gap-[3vw] items-center py-16 lg:py-8 bg-[#0a0a0a]"
-      style={{ backgroundImage: "radial-gradient(circle at 10% 100%, rgba(244, 180, 0, 0.3), transparent 25%), radial-gradient(circle at 100% 0%, rgba(219, 68, 55, 0.3), transparent 35%)",
+      id="about"
+      className="w-full min-h-screen flex flex-col justify-center gap-8 lg:gap-[3vw] items-center py-16 lg:py-8 bg-afrix-dark"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 10% 100%, rgba(244, 180, 0, 0.3), transparent 25%), radial-gradient(circle at 100% 0%, rgba(219, 68, 55, 0.3), transparent 35%)",
       }}
     >
       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
-        <span className="text-[#30b43f]">A PROPOS</span> DE NOUS
+        <span className="text-afrix-green">A PROPOS</span> DE NOUS
       </h2>
 
       <div className="w-[90%] lg:w-[80%] flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">
         {/* Left - Images */}
-        <div className="w-full lg:w-1/2 relative min-h-[350px] sm:min-h-[450px] lg:min-h-[500px]">
+        <div className="w-full lg:w-1/2 relative min-h-87.5 sm:min-h-12.5 lg:min-h-125">
           {/* Image 1 - Main */}
           <div className="absolute left-[10%] top-0 w-[65%] h-[85%] rounded-2xl overflow-hidden">
             <Image
@@ -38,13 +41,17 @@ export default function AboutSection() {
           </div>
 
           {/* Green badge - +1000 */}
-          <div className="absolute right-[10%] top-[35%] w-[140px] h-[100px] lg:w-[12vw] lg:h-[8vw] bg-[#30b43f] rounded-2xl flex flex-col justify-center items-center z-10">
-            <h1 className="text-2xl lg:text-4xl font-bold text-white m-0">+1000</h1>
-            <p className="text-white text-sm lg:text-base m-0">Membres actifs</p>
+          <div className="absolute right-[10%] top-[35%] w-35 h-25 lg:w-[12vw] lg:h-[8vw] bg-afrix-green rounded-2xl flex flex-col justify-center items-center z-10">
+            <h1 className="text-2xl lg:text-4xl font-bold text-white m-0">
+              +1000
+            </h1>
+            <p className="text-white text-sm lg:text-base m-0">
+              Membres actifs
+            </p>
           </div>
 
           {/* Logo circle */}
-          <div className="absolute left-0 top-[30%] w-[70px] h-[70px] lg:w-[8vw] lg:h-[8vw] bg-[#0a0a0a] rounded-full border-2 border-[#4285f4] overflow-hidden flex items-center justify-center z-10">
+          <div className="absolute left-0 top-[30%] w-17.5 h-17.5 lg:w-[8vw] lg:h-[8vw] bg-afrix-dark rounded-full border-2 border-afrix-blue overflow-hidden flex items-center justify-center z-10">
             <Image
               src="/logo.png"
               alt="Logo Afrix"
@@ -69,7 +76,7 @@ export default function AboutSection() {
           <div className="flex flex-col gap-6 mt-4">
             {/* Mission */}
             <div className="flex items-center gap-5">
-              <Rocket className="w-10 h-10 lg:w-12 lg:h-12 text-[#fbbc05] flex-shrink-0" />
+              <Rocket className="w-10 h-10 lg:w-12 lg:h-12 text-afrix-yellow shrink-0" />
               <p className="text-white/80 text-sm sm:text-base">
                 {
                   "Afrix Global a pour mission de rendre l'education accessible, de developper des competences cles et de favoriser l'employabilite des talents africains dans l'economie digitale."
@@ -79,7 +86,7 @@ export default function AboutSection() {
 
             {/* Vision */}
             <div className="flex items-center gap-5">
-              <Globe className="w-10 h-10 lg:w-12 lg:h-12 text-[#ea4335] flex-shrink-0" />
+              <Globe className="w-10 h-10 lg:w-12 lg:h-12 text-afrix-red shrink-0" />
               <p className="text-white/80 text-sm sm:text-base">
                 {
                   "Afrix Global vise a construire un avenir educatif inclusif et innovant, ou la technologie favorise l'apprentissage, l'entrepreneuriat et l'autonomisation des talents africains."
@@ -90,5 +97,5 @@ export default function AboutSection() {
         </div>
       </div>
     </section>
-    )
+  );
 }
