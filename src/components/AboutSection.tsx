@@ -4,6 +4,7 @@ import Image from "next/image";
 import ImgAbout2 from "@/public/team-engineers-server-hub-working-together-investigate-breach-alerts.jpg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import AnimatedCounter from "./AnimatedCounter";
 // import { Rocket, Globe } from "lucide-react";
 
 export default function AboutSection() {
@@ -20,14 +21,26 @@ export default function AboutSection() {
         <span className="text-afrix-green">A PROPOS DE </span> NOUS
       </h2>
 
-      <div className="w-full flex flex-col md:flex-row px-[10%] gap-16 relative overflow-hidden">
-        <div className=" w-full lg:w-1/2 rounded md:rounded-bl-[5rem]  overflow-hidden">
-          {" "}
-          <Image
-            src={ImgAbout2}
-            alt="portrait about"
-            className="object-cover scale-x-[-1]"
-          />
+      <div className="w-full flex flex-col md:flex-row px-[10%] gap-16">
+        <div className=" w-full lg:w-1/2   relative">
+          <div className="w-full h-full rounded md:rounded-bl-[5rem] overflow-hidden ">
+            {" "}
+            <Image
+              src={ImgAbout2}
+              alt="portrait about"
+              className="object-cover scale-x-[-1]"
+            />
+          </div>
+          <div className=" grid place-content-center w-28 h-28 text-center text-white bg-afrix-green rounded-full absolute -top-10 -left-10 ">
+            <h1 className="font-bold text-2xl">
+              +
+              <span>
+                {" "}
+                <AnimatedCounter target={1000} />
+              </span>
+            </h1>
+            <p className="font-semibold text-xs uppercase">Membres</p>
+          </div>
         </div>
 
         <div className=" full md:w-1/2 md:flex flex-col justify-center  text-slate-200">
