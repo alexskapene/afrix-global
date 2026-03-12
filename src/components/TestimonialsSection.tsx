@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
     setActive((active - 1 + testimonials.length) % testimonials.length);
   return (
     <section
-      className="w-full min-h-[80vh] py-20 bg-afrix-dark flex flex-col items-center justify-center"
+      className="w-full min-h-[80vh] bg-afrix-dark flex flex-col items-center justify-center"
       style={{
         backgroundImage:
           "radial-gradient(circle at 0% 100%, rgba(245, 180, 0, 0.302), transparent 35%), radial-gradient(circle at 100% 100%, rgba(15, 157, 88, 0.3), transparent 35%), radial-gradient(circle at 100% 0%, rgba(219, 68, 55, 0.3), transparent 25%)",

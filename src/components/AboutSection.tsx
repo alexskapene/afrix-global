@@ -11,7 +11,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen flex flex-col justify-center gap-8 lg:gap-[3vw] items-center py-16 lg:py-8 bg-afrix-dark"
+      className="w-full min-h-[80vh] flex flex-col justify-center gap-12  items-center px-[10%] md:px-40  bg-afrix-dark"
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 100%, rgba(244, 180, 0, 0.3), transparent 25%), radial-gradient(circle at 100% 0%, rgba(219, 68, 55, 0.3), transparent 35%)",
@@ -21,8 +21,8 @@ export default function AboutSection() {
         <span className="text-afrix-green">A PROPOS DE </span> NOUS
       </h2>
 
-      <div className="w-full flex flex-col md:flex-row px-[10%] gap-16">
-        <div className=" w-full lg:w-1/2   relative">
+      <div className="w-full flex flex-col items-start md:flex-row  gap-16">
+        <div className=" w-full lg:w-1/2  relative">
           <div className="w-full h-full rounded md:rounded-bl-[5rem] overflow-hidden ">
             {" "}
             <Image
@@ -31,12 +31,12 @@ export default function AboutSection() {
               className="object-cover scale-x-[-1]"
             />
           </div>
-          <div className=" grid place-content-center w-28 h-28 text-center text-white bg-afrix-green rounded-full absolute -top-10 -left-10 ">
-            <h1 className="font-bold text-2xl">
+          <div className=" grid place-content-center w-20 md:w-28  h-20 md:h-28 text-center text-white bg-afrix-green rounded-full absolute -bottom-6 md:-top-12 -right-4 md:-left-10  ">
+            <h1 className="font-extrabold text-xl md:text-2xl">
               +
               <span>
                 {" "}
-                <AnimatedCounter target={1000} />
+                <AnimatedCounter target={100} />
               </span>
             </h1>
             <p className="font-semibold text-xs uppercase">Membres</p>
@@ -47,7 +47,7 @@ export default function AboutSection() {
           <h2 className=" text-2xl md:text-4xl text-afrix-blue  font-semibold">
             Des Compétences Techniques au Service de l’Innovation
           </h2>
-          <div>
+          <div className="my-4">
             <p className="my-4 font-semibold">
               Notre équipe s’appuie sur une solide expertise technique et des
               formations professionnelles en technologies modernes pour
@@ -63,7 +63,7 @@ export default function AboutSection() {
             <Button
               variant={"default"}
               size={"lg"}
-              className="w-36 md:w-45 p-6 mt-8 md:mt-0  bg-afrix-blue  hover:bg-afrix-blue/80 cursor-pointer"
+              className="w-36 md:w-45 p-6   bg-afrix-blue  hover:bg-afrix-blue/80 cursor-pointer"
             >
               Savoir plus
             </Button>

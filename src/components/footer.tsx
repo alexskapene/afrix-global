@@ -76,9 +76,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className=" w-[60%] flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0 md:justify-between  ">
+        <div className=" w-[60%] flex flex-col md:flex-row items-center md:items-start justify-center gap-6 md:gap-0 md:justify-between  ">
           {/* Block 2: Menu */}
-          <div className="flex md:block flex-col items-center justify-center text-center">
+          <div className="flex md:block flex-col items-center justify-center text-center md:text-start">
             <h3 className="text-lg font-bold mb-4 text-white">Menu</h3>
             <ul className="flex flex-col gap-2">
               {menuLinks.map((link) => (
@@ -95,7 +95,7 @@ export default function Footer() {
           </div>
 
           {/* Block 3: Formations */}
-          <div className="flex md:block flex-col items-center justify-center text-center">
+          <div className="flex md:block flex-col items-center justify-center text-center md:text-start">
             <h3 className="text-lg font-bold mb-4 text-white">Formations</h3>
             <ul className="flex flex-col gap-2">
               {formationLinks.map((label) => (
@@ -111,7 +111,7 @@ export default function Footer() {
             </ul>
           </div>
           {/* Block 4: Contact */}
-          <div className="flex md:block flex-col items-center justify-center">
+          <div className="flex md:block flex-col items-center justify-center md:text-start">
             <h3 className="text-lg font-bold mb-4 text-white">Contact</h3>
 
             <div className="space-y-3 text-white/80 text-sm">

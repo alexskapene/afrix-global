@@ -17,7 +17,7 @@ const counters = [
   {
     value: 500,
     prefix: "+",
-    color: "text-[#3367d6]",
+    color: "text-[#2898c5]",
     label: "Apprenants formes",
   },
   {
@@ -78,7 +78,7 @@ export default function CounterSection() {
   return (
     <section className="bg-afrix-dark">
       <div
-        className="w-full py-10 px-[5%] flex flex-wrap justify-around items-center gap-8"
+        className="w-full  flex flex-wrap justify-around items-center gap-8 px-[10%] md:px-40 py-12 "
         style={{
           backgroundImage:
             "radial-gradient(circle at 100% 50%, rgba(219, 68, 55, 0.3), transparent 35%)",
