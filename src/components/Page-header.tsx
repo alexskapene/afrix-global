@@ -25,7 +25,7 @@ export function PageHeader({
           {title} <span className={highlightColor}>{highlight}</span>
         </h1>
         {description && (
-          <p className="text-white/70 text-base sm:text-lg max-w-[700px] leading-relaxed">
+          <p className="text-white/70 text-base sm:text-lg max-w-175 leading-relaxed">
             {description}
           </p>
         )}
