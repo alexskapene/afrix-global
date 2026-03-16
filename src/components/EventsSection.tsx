@@ -34,7 +34,7 @@ export default function EventsSection() {
   return (
     <section
       id="events"
-      className="w-full min-h-[80vh] py-16 bg-afrix-dark flex flex-col items-center gap-8"
+      className="w-full min-h-screen py-16 bg-afrix-dark flex flex-col items-center gap-10 lg:gap-[5vw] py-6"
       style={{
         backgroundImage:
           "radial-gradient(circle at 0% 100%, rgba(66, 133, 244, 0.3), transparent 25%), radial-gradient(circle at 100% 0%, rgba(15, 157, 88, 0.3), transparent 35%)",
