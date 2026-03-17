@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { IoMdQuote } from "react-icons/io";
 
 const testimonials = [
@@ -175,7 +175,6 @@ export default function TestimonialsSection() {
         </div>
         {/* TEXT */}
         <div className="max-w-xl space-y-6 text-center lg:text-left">
-          {/* <Quote className="text-afrix-red w-10 h-10" /> */}
           <IoMdQuote className="text-afrix-red w-10 h-10" />
 
           <p className="text-white/80 leading-relaxed text-lg transition-all duration-500">
