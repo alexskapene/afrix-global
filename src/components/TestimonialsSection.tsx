@@ -28,7 +28,7 @@ const testimonials = [
     photo: "/images/team/team-4.jpg",
     name: "Laurence MASIKA",
     title: "Développeur FullStack",
-    text: "Une experience incroyable qui m'a permis de me lancer en freelance et obtenir mes premiers clients.",
+    text: " Ravie d'avoir participé à la formation FullStack Web du programme Talent4Startups, financé par Digital Africa et dispensé chez Afrix-Global. Ce parcours m'a permis de renforcer mes compétences techniques, particulièrement en JavaScript. Au-delà des outils, j'ai surtout acquis une véritable capacité d'adaptation. Grâce aux notions de Problem Solving, je suis désormais capable d'appréhender rapidement de nouveaux langages et frameworks. Une étape clé dans mon parcours de développeur !",
   },
   {
     photo: "/images/testimonials/testimonial-6.png",
