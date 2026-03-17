@@ -14,7 +14,7 @@ export interface Event {
 export const events: Event[] = [
   {
     id: "Workshop-1",
-    image: "/images/event1.jpg",
+    image: "/images/event-cover1.png",
     title: "Réussir sa carrière dans le numérique : stratégies, erreurs à éviter et opportunités ",
     date: "22 Decembre 2025",
     location: "Afrix Global",
@@ -34,7 +34,7 @@ export const events: Event[] = [
   },
   {
     id: "workshop-2",
-    image: "/images/event2.jpg",
+    image: "/images/event-cover2.png",
     title: "Penser en architecte, construire comme un ingénieur (Fullstack Developer)",
     date: "25 fevrier 2026",
     location: "Afrix Global & Online",
@@ -52,7 +52,7 @@ export const events: Event[] = [
   },
   {
     id: "Workshop-3",
-    image: "/images/event3.jpg",
+    image: "/images/event-cover3.png",
     title: "Analyse de cas réels : campagnes réussies et campagnes ratées",
     date: "10-11 fevrier 2026",
     location: "Afrix Global",
