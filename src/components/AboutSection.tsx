@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import ImgAbout2 from "@/public/images/logo-afrix3.png";
+import ImgAbout2 from "@/public/images/herosection/logo-afrix3.png";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "../../components/AnimatedCounter";
 // import { Rocket, Globe } from "lucide-react";
+import { MotionContainer } from "./MotionContainer";
 
 export default function AboutSection() {
   return (
-    <section
+    <MotionContainer
       id="about"
       className="w-full min-h-[80vh] flex flex-col justify-center gap-12  items-center px-[10%] md:px-40  bg-afrix-dark"
       style={{
@@ -70,6 +71,6 @@ export default function AboutSection() {
           </Link>
         </div>
       </div>
-    </section>
+    </MotionContainer>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import AnimatedCounter from "../../components/AnimatedCounter";
+import { MotionContainer } from "./MotionContainer";
 
 const counters = [
   {
@@ -40,7 +41,23 @@ export default function CounterSection() {
         }}
       >
         {counters.map((counter) => (
-          <div key={counter.label} className="text-center flex-1 min-w-35">
+          <MotionContainer
+            key={counter.label}
+            className="text-center flex-1 min-w-35"
+            stagger={0.2} // temps entre chaque enfant
+            containerVariants={{
+              hidden: { opacity: 0 },
+              show: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            itemVariants={{
+              hidden: { opacity: 0, y: 50 },
+              show: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.7, ease: "easeOut" },
+              },
+            }}
+          >
             <h2
               className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${counter.color}`}
             >
@@ -49,7 +66,7 @@ export default function CounterSection() {
             <p className="text-white/80 text-sm sm:text-base mt-2">
               {counter.label}
             </p>
-          </div>
+          </MotionContainer>
         ))}
       </div>
     </section>

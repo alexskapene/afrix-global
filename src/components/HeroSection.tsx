@@ -1,10 +1,12 @@
 "use client";
 
-import image from "@/public/images/herosection/hero_section_image.webp";
+import image from "@/public/images/herosection/hero_section.png";
 import Image from "next/image";
-import LogoAfrix from "@/public/images/image_herosection1.webp";
+import LogoAfrix from "@/public/images/herosection/logo-afrix3.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { MotionContainer } from "./MotionContainer";
 
 export default function HeroSection() {
   return (
@@ -17,15 +19,25 @@ export default function HeroSection() {
     >
       <div className="container mx-auto  px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-[5vw] relative md:static top-40">
         {/* Left side */}
-        <div className=" w-full lg:w-1/2 mb-8 lg:mb-0 z-2 md:z-0">
-          <h1 className="text-4xl text-center md:text-start sm:text-5xl md:text-6xl lg:text-[6vw] font-bold italic leading-tight text-white">
+        <motion.div
+          className=" w-full lg:w-1/2 mb-8 lg:mb-0 z-2 md:z-0"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.h1
+            className="text-4xl text-center md:text-start sm:text-5xl md:text-6xl lg:text-[6vw] font-bold italic leading-tight text-white"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+          >
             We Train. <br />
             We Create. <br />
             We Connect.
-          </h1>
+          </motion.h1>
 
           {/* buttons hero section  */}
-          <div className="flex justify-center md:justify-start gap-x-8 mt-8">
+          <MotionContainer className="flex justify-center md:justify-start gap-x-8 mt-8">
             <Link href="/apropos">
               {" "}
               <Button
@@ -42,18 +54,31 @@ export default function HeroSection() {
                 Nous contacter
               </Button>
             </Link>
-          </div>
-        </div>
+          </MotionContainer>
+        </motion.div>
 
         {/* Right side - Container with relative positioning */}
 
-        <div className="relative -top-36 md:top-0 w-[90%] md:w-[80%]  lg:w-1/2 flex items-center justify-center min-h-87.5 sm:min-h-100 lg:min-h-[35vw]">
-          <div className="grid place-items-center w-150 h-150 z-1 md:z-0">
+        <div className="relative -top-36 md:top-28 w-full h-full md:w-[80%]  lg:w-1/2 flex items-center justify-center min-h-87.5 sm:min-h-100 lg:min-h-[35vw]">
+          <motion.div
+            className="   grid place-items-center w-150 h-150 md:absolute -top-25 z-1 md:z-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <Image src={LogoAfrix} alt="logo afrix" />
-          </div>
-          <div className="absolute  md:top-12 w-full md:w-auto h-auto  z-2 md:z-0">
+          </motion.div>
+          <motion.div
+            className="absolute  md:top-12 w-full md:w-auto h-auto  z-2 md:z-0"
+            initial={{ opacity: 1, x: "120%" }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 1.2,
+              ease: [0.34, 1.56, 0.64, 1],
+            }}
+          >
             <Image src={image} alt="Image hero section" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

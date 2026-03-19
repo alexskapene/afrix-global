@@ -1,8 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
+const container = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] as const },
+  },
+};
 const publications = [
   {
     image: "/images/publications/pub-2.png",
@@ -37,14 +53,31 @@ export default function PublicationSection() {
           "radial-gradient(circle at 0% 0%, rgba(66, 133, 244, 0.3), transparent 25%), radial-gradient(circle at 100% 100%, rgba(219, 68, 55, 0.3), transparent 25%)",
       }}
     >
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-10">
-        NOS RECENTES <span className="text-afrix-blue">PUBLICATIONS</span>
-      </h2>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-10">
+          NOS RECENTES <span className="text-afrix-blue">PUBLICATIONS</span>
+        </h2>
+      </motion.div>
 
-      <div className="w-[90%] lg:w-[80%] flex flex-wrap justify-center gap-6">
-        {publications.map((pub) => (
-          <Card
-            key={pub.date}
+      <motion.div
+        className="w-[90%] lg:w-[80%] flex flex-wrap justify-center gap-6"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        {publications.map((pub, i) => (
+          <motion.div
+            key={i}
+            variants={item}
+            whileHover={{
+              y: -6,
+              transition: { type: "spring", stiffness: 300, damping: 20 },
+            }}
             className="w-full sm:w-[48%] lg:w-[30%] glass-light rounded-2xl overflow-hidden border-0 transition-transform hover:-translate-y-1 hover:shadow-2xl bg-white/5"
           >
             <div className="relative aspect-video w-full">
@@ -69,9 +102,9 @@ export default function PublicationSection() {
                 </Button>
               </Link>
             </CardContent>
-          </Card>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
