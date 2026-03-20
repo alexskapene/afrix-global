@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Users, Star } from "lucide-react";
@@ -155,20 +155,20 @@ export function FormationsList() {
         }}
       >
         <motion.div
-        className="w-[90%] max-w-300 flex flex-wrap justify-center gap-8"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-50px" }}
-      >
+          className="w-[90%] max-w-300 flex flex-wrap justify-center gap-8"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {formations.map((formation, i) => (
             <motion.div
               key={i}
-            variants={item}
-            whileHover={{
-              y: -10,
-              transition: { type: "spring", stiffness: 300, damping: 20 },
-            }}
+              variants={item}
+              whileHover={{
+                y: -10,
+                transition: { type: "spring", stiffness: 300, damping: 20 },
+              }}
               className="w-full sm:w-[45%] lg:w-[30%] rounded-2xl border border-white/10 bg-black/30 backdrop-blur-md overflow-hidden transition-all hover:-translate-y-2 hover:shadow-2xl group"
             >
               {/* Image */}
@@ -230,9 +230,9 @@ export function FormationsList() {
                   S'inscrire
                 </Button>
               </CardContent>
-            </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* 🔥 MODAL */}
