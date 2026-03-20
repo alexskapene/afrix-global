@@ -11,13 +11,13 @@ import { MotionContainer } from "./MotionContainer";
 export default function HeroSection() {
   return (
     <section
-      className=" relative flex flex-col items-center justify-center w-full min-h-screen bg-afrix-dark pt-30 overflow-hidden py-16"
+      className="relative flex flex-col items-center justify-center w-full h-screen bg-afrix-dark pt-30 overflow-hidden "
       style={{
         backgroundImage:
           "radial-gradient(circle at 10% 100%, rgba(244, 180, 0, 0.05), transparent 35%), radial-gradient(circle at 100% 0%, rgba(219, 68, 55, 0.3), transparent 35%)",
       }}
     >
-      <div className="container mx-auto w-[90%] lg:w-[85%] px-4 flex flex-col lg:flex-row items-center gap-10 lg:gap-[5vw] relative md:static top-40">
+      <div className="container mx-auto  px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-[5vw] relative md:static top-40">
         {/* Left side */}
         <motion.div
           className=" w-full lg:w-1/2 mb-8 lg:mb-0 z-2 md:z-0"
@@ -26,7 +26,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
         >
           <motion.h1
-            className="text-4xl text-center md:text-start sm:text-5xl md:text-6xl lg:text-[6vw] font-bold italic leading-tight text-white"
+            className="roboto-slab text-4xl  text-center md:text-start sm:text-5xl md:text-6xl lg:text-[6vw] font-black  leading-tight text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
@@ -37,20 +37,20 @@ export default function HeroSection() {
           </motion.h1>
 
           {/* buttons hero section  */}
-          <MotionContainer className="flex justify-center md:justify-start gap-x-8 mt-8">
+          <MotionContainer className="flex flex-col md:flex-row justify-center md:justify-start px-10 md:px-0 gap-8 mt-8">
             <Link href="/apropos">
               {" "}
               <Button
                 variant={"default"}
                 size={"lg"}
-                className="w-36 md:w-45 p-6  bg-afrix-blue  hover:bg-afrix-blue/80 cursor-pointer"
+                className="w-full md:w-45 p-6  bg-afrix-blue  hover:bg-afrix-blue/80 cursor-pointer"
               >
                 Savoir plus
               </Button>
             </Link>
 
             <Link href="/contact">
-              <Button className="w-36 md:w-45 p-6 bg-transparent border border-afrix-blue hover:bg-afrix-blue cursor-pointer">
+              <Button className="w-full md:w-45 p-6 bg-transparent border border-afrix-blue hover:bg-afrix-blue cursor-pointer">
                 Nous contacter
               </Button>
             </Link>
