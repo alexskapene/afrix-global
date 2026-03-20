@@ -19,6 +19,7 @@ const item = {
     transition: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] as const },
   },
 };
+
 const publications = [
   {
     image: "/images/publications/pub-2.png",
@@ -34,7 +35,6 @@ const publications = [
       "Nous vous proposons 5 formations pratiques, en présentiel et en ligne, pour renforcer vos compétences en numérique et analyse de données, des atouts essentiels et recherchés sur le marché.",
     link: "https://www.linkedin.com/posts/afrix-global_saisissez-cette-opportunit%C3%A9-de-formation-activity-7438079660426567680-MYUm?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEctRdkBYpYsxcmmUb6I5PI8kudJhWhu-HU",
   },
-
   {
     image: "/images/publications/pub-3.png",
     date: "24 Février 2026",
@@ -43,11 +43,12 @@ const publications = [
     link: "https://x.com/Afrix_Global/status/2026188762280054828?s=20",
   },
 ];
+
 export default function PublicationSection() {
   return (
     <section
       id="publications"
-      className="w-full min-h-screen bg-afrix-dark flex flex-col items-center gap-10 lg:gap-[5vw] py-16"
+      className="w-full min-h-screen bg-afrix-dark flex flex-col items-center gap-10 lg:gap-[5vw] py-20"
       style={{
         backgroundImage:
           "radial-gradient(circle at 0% 0%, rgba(66, 133, 244, 0.3), transparent 25%), radial-gradient(circle at 100% 100%, rgba(219, 68, 55, 0.3), transparent 25%)",
@@ -85,7 +86,7 @@ export default function PublicationSection() {
                 src={pub.image || "/placeholder.svg"}
                 alt={pub.description}
                 fill
-                className="absolute  inset-0 w-full h-full z-20 object-cover"
+                className="absolute inset-0 w-full h-full z-20 object-cover"
               />
             </div>
             <CardContent className="p-5 flex flex-col gap-3">
@@ -96,7 +97,7 @@ export default function PublicationSection() {
               <Link href={pub.link}>
                 <Button
                   variant="default"
-                  className="self-start  bg-afrix-blue text-white hover:bg-afrix-blue/70 transition-all text-sm px-5"
+                  className="self-start bg-afrix-blue text-white hover:bg-afrix-blue/70 transition-all text-sm px-5"
                 >
                   Lire plus
                 </Button>
