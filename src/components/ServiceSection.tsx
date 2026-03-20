@@ -7,7 +7,7 @@ import {
   ImageIcon,
   PenTool,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 const container = {

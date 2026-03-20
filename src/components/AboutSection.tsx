@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import ImgAbout2 from "@/public/images/about/about_image.png";
+import ImgAbout2 from "@/public/images/about/about_section2.jpg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import AnimatedCounter from "../../components/AnimatedCounter";
-// import { Rocket, Globe } from "lucide-react";
 import { MotionContainer } from "./MotionContainer";
 
 export default function AboutSection() {
