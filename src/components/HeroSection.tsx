@@ -26,7 +26,8 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
         >
           <motion.h1
-            className="roboto-slab text-4xl  text-center md:text-start sm:text-5xl md:text-6xl lg:text-[6vw] font-black  leading-tight text-white"
+            className="text-4xl  text-center md:text-start sm:text-5xl md:text-6xl lg:text-[6vw] font-black  leading-tight text-white"
+            style={{ fontFamily: "var(--font-roboto-slab)" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
